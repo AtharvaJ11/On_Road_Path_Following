@@ -21,5 +21,4 @@ roslaunch tv_localization.launch
 roslaunch tv_phase_1 case_**case_number**.launch
 ```
 
-
-## Pulled from Team Averera Organization Repository
+Pulled from Team Averera Organization Repository
