@@ -1,5 +1,5 @@
-# Auto_2K22_WS
-ROS workspace for running test vehicle autonomously.
+# On Road Path Following
+ROS workspace for Autonomous Prototype vehicle.
 
 
 # Setup guidelines 
