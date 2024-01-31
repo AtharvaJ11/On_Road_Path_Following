@@ -1,0 +1,23 @@
+{
+    "header": {
+        "seq": 69,
+        "stamp": {
+            "secs": 0,
+            "nsecs": 0
+        },
+        "frame_id": "wow"
+    },
+    "pose": {
+        "position": {
+            "x": 1.0,
+            "y": 2.0,
+            "z": 3.0
+        },
+        "orientation": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": 0.5,
+            "w": 0.5
+        }
+    }
+}

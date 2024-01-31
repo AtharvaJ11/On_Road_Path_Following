@@ -1,0 +1,12 @@
+<launch>
+
+
+  <node name="controller" pkg="tv_control" type="controller.py" />
+  <!-- <node name="path_pub" pkg="tv_path_planning" type="readJSON2rosmsg.py" /> -->
+  <!-- <node name="singlePointFollower" pkg="tv_control" type="singlePointFollower.py" /> -->
+  <node name="multiPointFollower" pkg="tv_control" type="multiPointFollower.py" />
+  <node name="marker" pkg="tv_localization" type="marker.py" />
+
+
+
+</launch>

@@ -1,0 +1,13 @@
+######################################
+STEP 1: open terminal and write the command below to open text editor
+sudo gedit /etc/udev/rules.d/99-usb-serial.rules
+
+######################################
+STEP2: past the following lines in the text editor and save the file
+
+SUBSYSTEM=="tty", ATTRS{manufacturer}=="Pozyx Labs", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5740", SYMLINK+="UWB" 
+SUBSYSTEM=="tty", ATTRS{manufacturer}=="FTDI", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", SYMLINK+="UM7"
+SUBSYSTEM=="tty", ATTRS{manufacturer}=="Arduino (www.arduino.cc)", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0043", SYMLINK+="ARDUINO%n" 
+
+######################################
+STEP3: change the ports to UWB, UM7, ARDUINO0, ARDUINO1..., from ttyACM*, ttyUSB*

@@ -1,0 +1,14 @@
+<launch>
+
+  <!-- <node name="uwb_odom" pkg="tv_localization" type="uwb_pub.py" /> -->
+
+  <node name="controller" pkg="tv_control" type="controller.py" />
+  <node name="wp_publisher" pkg="tv_path_planning" type="wp_publisher.py" args="$(find tv_path_planning)/src"/>
+  <!-- <node name="path_pub" pkg="tv_path_planning" type="readJSON2rosmsg.py" /> -->
+
+  <node name="marker" pkg="tv_localization" type="marker.py" />
+
+  <!-- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find tv_localization)/rviz/config.rviz" /> -->
+
+
+</launch>

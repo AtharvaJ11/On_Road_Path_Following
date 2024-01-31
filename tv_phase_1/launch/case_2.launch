@@ -1,0 +1,10 @@
+<launch>
+
+
+  <node name="controller" pkg="tv_control" type="controller.py" />
+  <!-- <node name="path_pub" pkg="tv_path_planning" type="readJSON2rosmsg.py" /> -->
+
+
+
+
+</launch>

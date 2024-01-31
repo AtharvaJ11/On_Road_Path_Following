@@ -1,0 +1,13 @@
+<launch>
+
+  <node name="uwb_odom" pkg="tv_localization" type="uwb_pub.py" />
+  <node name="uwb_low_pass" pkg="tv_localization" type="uwb_low-pass.py" />
+
+  <node name="controller" pkg="tv_control" type="controller.py" />
+  <node name="path_publisher" pkg="tv_path_planning" type="path_publisher.py" />
+
+
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find tv_localization)/rviz/config.rviz" />
+
+
+</launch>

@@ -1,0 +1,12 @@
+<launch>
+
+  <arg name="map_file" default="$(find tv_localization)/map/map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  <node name="drive_joystick" pkg="tv_control" type="drive_joystick.py" />
+  <node pkg="rosserial_arduino" type="serial_node.py" name="serial_node" output="screen" launch-prefix="gnome-terminal --command">
+  </node>
+  <node pkg="rosserial_arduino" type="serial_node1.py" name="serial_node1" output="screen" launch-prefix="gnome-terminal --command">
+  </node>
+
+
+</launch>

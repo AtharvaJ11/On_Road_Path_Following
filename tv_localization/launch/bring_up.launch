@@ -1,0 +1,29 @@
+<launch>
+
+  <arg name="map_file" default="$(find tv_localization)/map/map3.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+  <!-- <node name="uwb_odom" pkg="tv_localization" type="uwb_pub.py" /> -->
+  <node pkg="joy" type="joy_node" name="joy_node" />
+  <node name="uwb_onlyOrientation" pkg="tv_localization" type="uwb_onlyOrientation.py" />
+  <node name="uwb_odom_positionOnly" pkg="tv_localization" type="uwb_onlyPosition.py" />
+  <node name="uwb_cb" pkg="tv_localization" type="uwb_combine" /> 
+  <!-- <node name="uwb_low_pass" pkg="tv_localization" type="uwb_low-pass.py" /> -->
+  <node name="uwb_low_pass" pkg="tv_localization" type="uwb_low-pass.py" />
+
+  <!-- <node name="controller" pkg="tv_control" type="controller.py" />
+  <node name="throttle_controller" pkg="tv_control" type="throttle_controller.py" /> -->
+
+  <node name="drive_joystick_sqrt" pkg="tv_control" type="drive_joystick_sqrt.py" />
+  <node name="throttle_controller" pkg="tv_control" type="throttle_controller.py" />
+  <node name="kill_switch" pkg="tv_control" type="kill_switch.py" />
+
+  <node pkg="rosserial_arduino" type="serial_node.py" name="serial_node" output="screen" launch-prefix="gnome-terminal --command">
+  
+  </node>
+  <node pkg="rosserial_arduino" type="serial_node1.py" name="serial_node1" output="screen" launch-prefix="gnome-terminal --command">
+  </node>
+
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find tv_localization)/rviz/config.rviz" />
+
+
+</launch>
